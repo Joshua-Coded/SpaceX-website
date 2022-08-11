@@ -61,6 +61,7 @@ a {
     position: relative;
     margin-right: 20px;
     padding-bottom: 2px;
+    list-style: none;
 }
 
 /* menu item bottom border */
@@ -73,7 +74,7 @@ a {
     width: 100%;
     height: 1px;
     background-color: #fff;
-    transform: scaleX(0);
+    transform: scaleX(1);
     transition: transform 0.6s cubic-bezier(0.19,1, 0.22);
     transform-origin: right center;
 }
@@ -105,17 +106,40 @@ section {
     font-size: 22px;
     margin-bottom: 5px;
     font-weight: 300;
-
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 .section-inner h2 {
     font-size: 50px;
     font-weight: 700;
     margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both; /* stop from showing at the start of the animation */
 }
+
+.section-inner a {
+    animation: fadeInUp 0.5s ease-in-out 0.4s;
+    animation-fill-mode: both; /* stop from showing at the start of the animation */
+}
+
 /* background images */
 .section-a {
     background-image: url('../img/section-a.webp');
+}
+.section-b {
+    background-image: url('../img/section-b.webp');
+}
+.section-c {
+    background-image: url('../img/section-c.webp');
+}
+.section-d {
+    background-image: url('../img/section-d.webp');
+}
+.section-e {
+    background-image: url('../img/section-e.webp');
+}
+.section-f {
+    background-image: url('../img/section-f.webp');
 }
 
 .btn {
@@ -131,6 +155,7 @@ section {
     font-weight: bold;
     overflow: hidden;
     z-index: 2;
+   
 }
 
 .btn:hover span {
@@ -144,14 +169,127 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: rgb(99, 74, 74);
     color: #fff;
     z-index: -1;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.btn:hover .hover {
+    transform: translateY(0);
+        
 }
 
+.scroll-arrow {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeBounce 5s infinite;
+}
+/* Footer */
+footer {
+    position: relative;
+    padding: 55px 0;
+}
 
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
+footer ul li {
+    margin-right: 30px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 2.5;
+    list-style: none;
 
+}
+
+footer ul li a {
+    color: #fff;
+    transition: color 0.6s;
+}
+
+footer ul li a:hover {
+    color: #aaa;
+}
+
+/* Hambuger  */
+.hambuger {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+/* Animations  */
+@keyframes fadeInUp {
+    0% {
+          opacity: 0;
+          transform: translateY(140px);
+    }
+    100% {
+              opacity: 1;
+              transform: translateY(0);
+    }
+}
+
+@keyframes fadeBounce  {
+    0%, 20%, 50%, 80%, 100% {
+   opacity: 0;
+   transform: translateY(-20px);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* media query */
+
+@media screen and (max-width: 960px) {
+    /* Hide desktop menu */
+    .desktop-main-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .section-inner {
+        bottom: 75px;
+        left: 20px;
+    }
+
+    .section-inner h2 {
+        font-size: 40px;
+    }
+
+    footer ul li:first-child {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    footer ul li {
+        margin-right: 15px;
+    }
+
+    .logo {
+       width: 150px;
+       margin: auto;
+    }
+
+}
 
 
 
