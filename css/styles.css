@@ -350,12 +350,60 @@ footer ul li a:hover {
         color: #aaa;
     }
 
+/* Inner pages */
+
+.bg-falcon-9 {
+    background-image: url('../img/falcon-9.webp');
+}
+
+.section-animate {
+animation: fadeIn 2s ease-in-out;
+}
+
+.section-inner-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
 
 
+}
+
+.section-inner-center h3 {
+    font-size: 100px;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
 
 
+.section-inner-center p {
+    font-size: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
+}
 
+/* Starts */
+.start {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
 
+.start div span {
+    font-size: 160px;
+
+}
+
+.start div h4 {
+    font-size: 24px;
+    font-weight: 300;
+}
 /* Animations  */
 @keyframes fadeInUp {
     0% {
@@ -367,6 +415,19 @@ footer ul li a:hover {
               transform: translateY(0);
     }
 }
+
+@keyframes fadeIn {
+    0% {
+          opacity: 0;
+          transform: translateY(140px);
+    }
+    100% {
+              opacity: 1;
+              transform: translateY(0);
+    }
+}
+
+
 
 @keyframes fadeBounce  {
     0%, 20%, 50%, 80%, 100% {
@@ -392,6 +453,9 @@ footer ul li a:hover {
     /* show main mobilr items */
     .mobile-only {
         display: block;
+    }
+    .section-inner-center  h3 {
+   font-size: 75px;
     }
 }
 
@@ -419,7 +483,23 @@ footer ul li a:hover {
        width: 150px;
        margin: auto;
     }
+    .section-inner-center {
+        width: 80%;
+     }
 
+    .section-inner-center  h3 {
+        font-size: 60px;
+         }
+/* starts */
+.start {
+display: flex;
+flex-direction: column;
+
+}
+
+.start div {
+    margin-bottom: 20px;
+}
 }
 
 
